@@ -1,5 +1,6 @@
 import argparse
 import math
+import os
 import time
 import random
 import string
@@ -15,7 +16,8 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-y_geocode = Geocode(api_key='235f1bba-498d-4e93-ad31-230043ba6983')
+YANDEX_API_KEY = os.getenv('YANDEX_API_KEY')
+y_geocode = Geocode(api_key=YANDEX_API_KEY)
 
 TARIFF_MULTIPLIERS = {
     Tariff.ECONOMY: 1.0,
