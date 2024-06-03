@@ -1,0 +1,5 @@
+inquirer==2.7.0
+sqlalchemy==1.4.36
+passlib==1.7.4
+cryptography==3.4.8
+ymaps==0.2.2
