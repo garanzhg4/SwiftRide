@@ -1,4 +1,5 @@
 import argparse
+import logging
 import math
 import os
 import time
@@ -11,6 +12,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import api
 
+logging.getLogger('passlib').setLevel(logging.ERROR)
 engine = create_engine('sqlite:///users.db', echo=False)
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
